@@ -1,8 +1,6 @@
 # Todo
 - TcpListener:
 	- Options struct/flags for binding and accepting
-- TcpStream:
-	- Static connect function
 - Socket:
 	- make reference counted fd using fd table for cheap cloning/copying, splitting socket into r/w halves, etc
 
