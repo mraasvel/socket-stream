@@ -1,4 +1,5 @@
 #include "socket.hpp"
+#include "mrlog.hpp"
 #include <unistd.h>
 
 namespace net {
@@ -29,10 +30,9 @@ void Socket::close_socket() {
 		return;
 	}
 	if (close(fd) == -1) {
-		// TODO: log error
+		mrlog::error("error closing fd: [{}]", fd);
 	}
 	fd = -1;
-
 }
 
 Socket::~Socket() {

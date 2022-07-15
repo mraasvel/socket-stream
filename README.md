@@ -1,10 +1,10 @@
 # Todo
-- import logger lib
 - TcpListener:
 	- Make constructor for binding and creating the socket
 	- Accept method for accepting a new connection
 	- Options struct/flags for binding and accepting
 - TcpStream:
+	- Static connect function
 
 # Socket
 Streaming interface for socket connections
@@ -19,4 +19,5 @@ Streaming interface for socket connections
 - Accept will return the TcpStream class
 
 ## TcpStream
-- Class for connecting to a socket and writing to it
+- Static function for making a connection
+- Stream class for socket connection

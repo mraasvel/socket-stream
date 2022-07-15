@@ -15,6 +15,7 @@ endif()
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+add_subdirectory(mrlog)
 add_subdirectory(lib)
 # add_subdirectory(test)
 add_subdirectory(app)
