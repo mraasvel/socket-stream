@@ -29,6 +29,7 @@ void Socket::close_socket() {
 		// fail quietly
 		return;
 	}
+	mrlog::info("closing: [{}]", fd);
 	if (close(fd) == -1) {
 		mrlog::error("error closing fd: [{}]", fd);
 	}
@@ -37,6 +38,11 @@ void Socket::close_socket() {
 
 Socket::~Socket() {
 	close_socket();
+}
+
+std::ostream& operator<<(std::ostream& out, const Socket& rhs) {
+	out << rhs.fd;
+	return out;
 }
 
 }

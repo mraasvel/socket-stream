@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 namespace net {
 
 /*
@@ -21,5 +23,7 @@ struct Socket {
 	private:
 		void close_socket();
 };
+
+std::ostream& operator<<(std::ostream& out, const Socket& rhs);
 
 }

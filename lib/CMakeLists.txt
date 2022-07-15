@@ -5,6 +5,7 @@ add_library(${LIB} STATIC
 	socket.cpp
 	tcp_listener.cpp
 	tcp_stream.cpp
+	socket_buffer.cpp
 )
 
 target_compile_options(${LIB} PRIVATE -Wall -Wextra -Werror)

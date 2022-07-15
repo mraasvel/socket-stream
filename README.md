@@ -1,10 +1,10 @@
 # Todo
 - TcpListener:
-	- Make constructor for binding and creating the socket
-	- Accept method for accepting a new connection
 	- Options struct/flags for binding and accepting
 - TcpStream:
 	- Static connect function
+- Socket:
+	- make reference counted fd using fd table for cloning/copying, splitting into r/w halves, etc
 
 # Socket
 Streaming interface for socket connections

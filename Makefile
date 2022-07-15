@@ -12,13 +12,13 @@ release:
 	$(MAKE) build RELEASE=1
 
 run: build
-	$(BUILD_DIR)/app/a.out $(ARGS)
+	$(BUILD_DIR)/example/a.out $(ARGS)
 
 test: build
 	$(BUILD_DIR)/test/test.out $(ARGS)
 
 gdb: build
-	gdb $(BUILD_DIR)/app/a.out $(ARGS)
+	gdb $(BUILD_DIR)/example/a.out $(ARGS)
 
 build: $(BUILD_DIR)
 	cmake --build $(BUILD_DIR)
