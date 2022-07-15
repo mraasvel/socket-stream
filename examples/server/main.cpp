@@ -4,13 +4,13 @@
 
 // just echo data back
 int handle_connection(net::TcpStream connection) {
+	mrlog::info("new connection");
 	while (connection.good()) {
-		int peek = connection.peek();
 		int n = connection.get();
-		mrlog::info("got: {} -> {}", peek, n);
 		connection.put(n);
-		connection.sync();
+		connection.flush();
 	}
+	mrlog::info("client hung up");
 	return 0;
 }
 

@@ -17,4 +17,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_subdirectory(mrlog)
 add_subdirectory(lib)
-add_subdirectory(example)
+add_subdirectory(examples)

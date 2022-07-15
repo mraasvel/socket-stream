@@ -11,14 +11,14 @@ all: build
 release:
 	$(MAKE) build RELEASE=1
 
-run: build
-	$(BUILD_DIR)/example/a.out $(ARGS)
+client: build
+	$(BUILD_DIR)/examples/client/client.out $(ARGS)
+
+server: build
+	$(BUILD_DIR)/examples/server/server.out $(ARGS)
 
 test: build
 	$(BUILD_DIR)/test/test.out $(ARGS)
-
-gdb: build
-	gdb $(BUILD_DIR)/example/a.out $(ARGS)
 
 build: $(BUILD_DIR)
 	cmake --build $(BUILD_DIR)
@@ -32,4 +32,4 @@ clean:
 re: clean
 	$(MAKE) build
 
-.PHONY: all release run test gdb build clean re
+.PHONY: all release client server test build clean re

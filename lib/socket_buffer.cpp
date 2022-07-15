@@ -53,9 +53,15 @@ int SocketBuffer::sync() {
 	if (pptr() == pbase()) {
 		return 0;
 	}
+#ifdef __APPLE__
 	if (send(socket.fd, output, pptr() - pbase(), 0) < 0) {
 		return -1;
 	}
+#else
+	if (send(socket.fd, output, pptr() - pbase(), MSG_NOSIGNAL) < 0) {
+		return -1;
+	}
+#endif
 	setp(output, output + BUFFER_SIZE);
 	return 0;
 }

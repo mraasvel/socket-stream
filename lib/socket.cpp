@@ -1,6 +1,7 @@
 #include "socket.hpp"
 #include "mrlog.hpp"
 #include <unistd.h>
+#include <cstring>
 
 namespace net {
 
@@ -29,9 +30,8 @@ void Socket::close_socket() {
 		// fail quietly
 		return;
 	}
-	mrlog::info("closing: [{}]", fd);
 	if (close(fd) == -1) {
-		mrlog::error("error closing fd: [{}]", fd);
+		mrlog::error("error closing fd: [{}]: {}", fd, strerror(errno));
 	}
 	fd = -1;
 }

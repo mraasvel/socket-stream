@@ -7,7 +7,6 @@ namespace net {
 
 class SocketBuffer: public std::streambuf {
 	public:
-
 		SocketBuffer() = delete;
 		SocketBuffer(const SocketBuffer& other) = delete;
 		SocketBuffer& operator=(const SocketBuffer& other) = delete;

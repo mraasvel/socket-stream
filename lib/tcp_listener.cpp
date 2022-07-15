@@ -16,11 +16,20 @@ NetResult TcpListener::init(const string& ip, short port) {
 		mrlog::error("failed to create socket: {}", strerror(errno));
 		return NetResult::Error;
 	}
+#ifdef __APPLE__
+	const int enable = 1;
+	// untested
+	if (setsockopt(sock.fd, SOL_SOCKET, SO_REUSEADDR | SO_NOSIGPIPE, &enable, sizeof(int)) < 0) {
+		mrlog::error("failed to set socket options: {}", strerror(errno));
+		return NetResult::Error;
+	}
+#else
 	const int enable = 1;
 	if (setsockopt(sock.fd, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0) {
 		mrlog::error("failed to set socket options: {}", strerror(errno));
 		return NetResult::Error;
 	}
+#endif
 
 	sockaddr_in addr;
 	std::memset(&addr, 0, sizeof(addr));

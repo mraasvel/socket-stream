@@ -1,4 +1,4 @@
-set(EXEC a.out)
+set(EXEC client.out)
 
 add_executable(${EXEC}
 	main.cpp

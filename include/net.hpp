@@ -1,5 +1,6 @@
 #pragma once
 
+#include "tcp_stream.hpp"
 #include <string>
 #include <exception>
 
@@ -20,5 +21,7 @@ class NetException: public std::exception {
 	private:
 		std::string reason;
 };
+
+TcpStream connect(const string& address, short port);
 
 }
