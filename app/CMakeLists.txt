@@ -5,3 +5,4 @@ add_executable(${EXEC}
 )
 
 target_link_libraries(${EXEC} PUBLIC net)
+target_link_libraries(${EXEC} PUBLIC mrlog)

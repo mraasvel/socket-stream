@@ -8,12 +8,12 @@ namespace net {
 
 class TcpListener {
 	public:
-		TcpListener(const string& address);
+		NetResult init(const string& ip, short port);
 		// simple blocking accept
 		TcpStream accept() const;
 
 	private:
-		Socket listen;
+		Socket listener;
 };
 
 }
