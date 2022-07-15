@@ -4,7 +4,7 @@
 - TcpStream:
 	- Static connect function
 - Socket:
-	- make reference counted fd using fd table for cloning/copying, splitting into r/w halves, etc
+	- make reference counted fd using fd table for cheap cloning/copying, splitting socket into r/w halves, etc
 
 # Socket
 Streaming interface for socket connections

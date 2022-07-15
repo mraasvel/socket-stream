@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
-project("json_parse")
+project("socket_stream")
 
 # C++ Standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -17,5 +17,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_subdirectory(mrlog)
 add_subdirectory(lib)
-# add_subdirectory(test)
 add_subdirectory(example)
